@@ -1,0 +1,20 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/stage_01_load_and_save.py --config=params.yaml
+    deps:
+    - path: src/stage_01_load_and_save.py
+      md5: b9c3b89f862030cb5b9feb88aa2d4bd0
+      size: 1210
+    - path: src/utils/common_utils.py
+      md5: e05893d4b846dd710b56f85ca3406e17
+      size: 1221
+    params:
+      params.yaml:
+        artifacts.raw_local_data: artifacts/raw_local_data_dir/data.csv
+        data_source.s3_source: 
+          https://dvc-demo-datasets.s3.ap-south-1.amazonaws.com/customer.csv?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmFwLXNvdXRoLTEiRzBFAiEAydHasAb00KZ%2BSVkmr5PvS9rnYCQEQFju8gcKoYTOrJYCIAigRFamcQFICqcNI1Zjn%2F5TKGwTbgaJ%2FN7H%2BZcQZ0krKoQDCMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQARoMMDk1MjY2ODU3Mzc2Igzg1WiWVya%2BGAcLJwYq2AIySCgfAJ821oIgnYXVRYt1rXd%2FASfiSIqWHG%2BrTKfNgRx9dahGQqublUVUGlBjvzbAMgsk8LIO77wMDKwMEecz4PKB60HQfjTmYA9DC3AbcQhstnodQ2hP%2FcRSuW5rL6UpHPdVak6S21mgZ4fEazu%2Bs7B%2BmXrjVy5p8Vecgf8YZ09AExvc%2Flt5Kw%2B3b1%2BWiufCnQrk18WU1nqpBSXzW3puNPRjtE8d%2FQ6i0ye0Ht51F2nZdTs8bqEAPCO5LufW55M4lxNg7Mf76KxNDNP9yBqu7OyNpJBm2gDbmZqcs8NqLGNrZjtAIj%2BfFeuLLCAOuwch33KdjcTM%2FCo8%2BqrHUyrmBC5mhB5ZOpXMdd7XfNjpHhdFVdKrZ0BCfQF5tjCdJ61pH2tXEcDZtzvxEyz%2B36MZy%2FcmBZXLMkXX02LrBZ1vSIi%2BnPxQQsLLdZ%2FWHhdJgltjqcV1oLABuDC2wMWwBjqzAuTJETB4gektTcKsP2UUU9hLC4kc1TTAMHacCjEkgULM8sr1mJGH%2F5haGIeI8cQteYqmP7Kb7SnEfzq936y2AmfFQrN9d%2Bcrfqyx9209bdlNQ5QLjs9UPrkC2Ak0hMnTwbdkojA1w8oHlTd2m7oqqqFilzudp5pNCRIVlgY0ryC1zIVxXYxaF%2BYfH5Oz636vYx%2B4vlIg4ifQ7Tki3LPTIvkIU2OaC89VBhfIQG5DM7HbfOin%2Bf0FND1WZ%2FYjt%2B9LjwXMLZrZEqJkY2f6zUbSX0MDEIY3CY2dfz7SrB6SMLEUrYwCyEz%2BnJrOzx3bRgQJv1IcGV9mKOiEyRqfbqLUe7zj5Bbt%2FC6gdEkuuTcn%2FLYdvG1k2PyRR6NHoQvtig%2B4nwhNAf%2FExct1y5%2B%2FvYV99lMu2x8%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240406T160633Z&X-Amz-SignedHeaders=host&X-Amz-Expires=43200&X-Amz-Credential=ASIARMLSY4GQIRYEKYB3%2F20240406%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=10935a2196bfd1be77f6692ca49d277fd35e08b93b7aac515f76fcc3cf7f089e
+    outs:
+    - path: artifacts/raw_local_data_dir/data.csv
+      md5: a7ed0437d6d877303e42bf3d861a869c
+      size: 141932

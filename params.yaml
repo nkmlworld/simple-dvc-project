@@ -1,0 +1,45 @@
+base:
+  project: simple-dvc-project
+  random_state: 42
+  target_col: quality
+  test_size: 0.2
+
+data_source:
+  # s3_source: https://dvc-demo-datasets.s3.ap-south-1.amazonaws.com/winequality_data/winequality-red.csv
+  # s3_source : https://dvc-demo-datasets.s3.ap-south-1.amazonaws.com/customer.csv
+  s3_source : https://dvc-demo-datasets.s3.ap-south-1.amazonaws.com/customer.csv?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmFwLXNvdXRoLTEiRzBFAiAHsTW%2FZYCivBRH6jh5l26VmJs2c3MO3Z%2BuPjkMzd6Z3gIhALsPd%2BQu9WtxZ1Vb7PArKTHdfNj6HjVZXuzNwfOh2C6jKoYDCM%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQARoMMDk1MjY2ODU3Mzc2Igy6nalOC%2F8wcfRP8Rcq2gJwTVnEyW6MgRDPSPSu3BbOYiRxbtaWAGvxaHcK6gyclOecNUEiozrMgQU2mlr441%2F%2BLODaWeKfz2wX1G8jbGAaTsYCSNcUkRHLJwXWCzZJvXxSAE604XjGRhFPFvNDX8N6l30AUnmxHS%2Fjz5rQu9%2BOvWmmguk29ZTumUTxxNOegS8mMtSRKTNHFgorGHLEDq3kGIdmsWCBY3slaN65blGiwIJwpaeviIt0CipL9sMjPhP9zJ%2FJ80X3owdAELd9o98JjRIxiRm3PYrtG7EU7T9%2Bymu9gVWEU79vk0xh8nAZvPV6N1i2w1M12ECHul1HUA%2BThjh0E%2F43HUNzGLAtepg1qQl4BBVrDWCIAxbb1sQn2qkhIvvG%2B0ki4BzJ8irz9S50u2gfHuUnR3%2BpvvcRW4SdNELP1AjSqax3ysBcwTGCdP8Y9CYEdqGrUTIsyU8t88TRViMLgPy06PVnMIvuyLAGOrMCcKmbpZCCVrlJFhAqVPWfb7kSLN9Mlk2Ch35aS5FVMd%2BpLgk1XmPyy1g2bPYyenQvcD8th9MaXDTofzJUuzTPiN57Mso3Hcz8%2B4mrVW91RDEj60R3HAYXE8IAqy2A5TY6b87exfbamgUMQvXHEfhuikr06ow%2BOOOC%2F1FIjA4otiQxeELga%2Fq4JMCXiebqC5vyIi%2BMhhxpk8R9dmndu3FJRWqRx%2FPpXMm%2FzGGeoMM1WYB2GwnUlI4fPup0MMd9uuhE1P2JHH7YJOp%2FwUVM%2BEhCC3vfPIMSMEeu2AfuxmYjoYmzP9Pc%2ByBiDGjTOMPOSpA97kYScOuDnB6GRTe8aHFVU6xet%2BLGQqNRZqlKGZOpLLO7Umdc8aWcTv669%2F3Gqz0zNbnVRKN5wWuT6RZuGhFDNP4G1Q%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240407T060510Z&X-Amz-SignedHeaders=host&X-Amz-Expires=43200&X-Amz-Credential=ASIARMLSY4GQACITI5EX%2F20240407%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=fd72c15aa60ee448ca5a5edff3d5286771496c9043b9f9a7ba6ee234724c0e13
+
+artifacts:
+  artifacts_dir: artifacts
+
+  raw_local_data_dir: artifacts/raw_local_data_dir
+  raw_local_data: artifacts/raw_local_data_dir/data.csv
+
+  split_data:
+    processed_data_dir: artifacts/processed_data
+    train_path: artifacts/processed_data/train.csv
+    test_path: artifacts/processed_data/test.csv
+
+  reports:
+    reports_dir: artifacts/report
+    params: artifacts/report/params.json
+    scores: artifacts/report/scores.json
+
+  model_dir: artifacts/saved_models
+  model_path: artifacts/saved_models/model.joblib
+
+
+estimators:
+  ElasticNet:
+    params:
+      alpha: 0.7
+      l1_ratio: 0.4
+
+  
+  
+  
+  
+  
+  
+  
+ 
